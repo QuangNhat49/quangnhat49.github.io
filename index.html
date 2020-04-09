@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Shop</title>
+    <link rel="stylesheet" href="./assets/css/fonts/fontawesome-free-5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=vietnamese">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- Header -->
+
+        <header class="header">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
+                            Vào cửa hàng trên ứng dụng F8-Shop
+
+                            <!-- HEADER QR CODE -->
+
+                            <div class="header__qr">
+                                <img src="./assets/img/qr_code.png" alt="QR Code" class="header__qr-img">
+                                <div class="header__qr-apps">
+                                    <a href="" class="header__qr-link">
+                                        <img src="./assets/img/google_play.png" alt="google_play"
+                                            class="header__qr-download">
+                                    </a>
+                                    <a href="" class="header__qr-link">
+                                        <img src="./assets/img/app_store.png" alt="app_store"
+                                            class="header__qr-download">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <span class="header__navbar-title--no-pointer">Đăng nhập</span>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-facebook"></i>
+                            </a>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-notify">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon far fa-bell"></i>
+                                Thông báo
+                            </a>
+                            <div class="header__notify">
+                                <header class="header__notify-header">
+                                    <h3>Thông báo mới nhận</h3>
+                                </header>
+                                <ul class="header__notify-list">
+                                    <li class="header__notify-item header__notify-item--viewed">
+                                        <a href="" class="header__notify-link">
+                                            <img src="data:image/jpeg;base64,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"
+                                                alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Xác thực chính hãng nguồn gốc các sản
+                                                    phẩm Ohui</span>
+                                                <span class="header__notify-descriotion">Hidden tag là giải pháp xác
+                                                    thực hàng chính hãng bằng công nghệ tiên tiến nhất hiện nay</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-item">
+                                        <a href="" class="header__notify-link">
+                                            <img src="data:image/jpeg;base64,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"
+                                                alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Sale sốc bộ dưỡng Ohui The First Tái
+                                                    tạo trẻ hoá da SALL OFF 70%</span>
+                                                <span class="header__notify-descriotion">Giá chỉ còn 375.000 (Giá gốc
+                                                    1.250.000VNĐ)</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="header__notify-item">
+                                        <a href="" class="header__notify-link">
+                                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEhUSEhISFRAQFRAVFRAQEQ8PFRUQFRUWFhUSFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGi0fHSUtLSstLSstLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0tLf/AABEIAJcBTgMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAAECAwUGBwj/xAA+EAACAQIDBQYEBAUCBgMAAAABAgADEQQhMQUSQVFxBhMiYYGRBzKhsSNCUsEUYtHh8DOiU3JzkrLxFUNj/8QAGAEAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAkEQEBAAIDAQACAQUBAAAAAAAAAQIRAyExEhNBUSJCYXGRMv/aAAwDAQACEQMRAD8A9wMeMY8AYxmjmM0AZeMSx14xkgE4oooBFuElItrJQBTi+2vb6hgQ1OmRUxOlgQVpn+c8/wCXWYfxB7fEb2Gwb7tiVq4oHQ8adLmeBb25zyKviUXOwY833j9P63k2/wANMcP3WhtXtHi8Y5Z3ZieJ0A5DgB5QbA41qZ3u88Q/SN6w/SQARbjre8y8RtJzysPJRbpylf8A8g9rbx9CRF8r+o9Q7O7RplwzAqHABqgHuycwAw/KeV9CDwynf7UcVsJUpjdBCHjcXH13T0E+fdm9oKlEj8yg3tlf0Ppxy8uXWYft5cBWp5keF6fhzOW66fp6H3hrRblZvZnb1WhVK94y7rW1AGvT7T37YGONeirPYkgZgbp+5+8+Yq2MJrNUsBvMTu5ABiM/Sez/AA57UfhmlVWzqN4MFIuvmDblqB1hOqWXcelhgJA1bHKc5jNtlPGvipjNgLNujiQRrbiOGs2MNiFqKrqbqwBHSVLN6Z3GybGitJhhBgZIGMljnOMtUAWkbEyBonyHUwJViHuZZhJB6S8XUfWJMTTTiT0ELlIcxtHASLCUUMfTc2Bs3Jsr9IQxil34dlnqQkXkhIvGQN9ZIyLayRjJBPmEMq6QSl8whVbSAAVNZGO+sjGRGUVZeZRVgFCyRkVkjAGWbeGN1ExF1mvgT4YqcFmPGMeIzGMY5jGAJYliWOsAeKKKAROs4f4p9pzhaAoU2tWxAN2BIKUhkxBGhOg9Z2OPxS0kao5AVFJJPADMz5t7YbcbE4ipWc5ufCpz3UGSr6D63k5VeE32ycVW9uA/tMuvX5RqtYsZdszZz13CopYnh+58oeK7yuoFCMZMYdp6hsb4fKAGqkljwGgm8vYzD2+S55nOZ/k/hpOH+XilLDsxsAfQQw4cKLWIbLMkAenGevU+y1FNEF+dpkba7LBxcDS/+fSL8ivwxwuyxWJ8O5UOppvuktY52LZX9QZ6JsXCUmpC9GtScXujq1N04XUkEOONm5cMiPOcfgK+GY2LLY6XNuU6bsp26FMClXU5aVFcJyyKkFeGtr5y5Wdx163qL1KWRuWBsQpAuRlvBACQ3Dd87X59x2ELGmy2YL8y74sAScwPLiOOczKW0Kdel3lBmYHgDQV78yQv+Wma21K6s2fdhU3izO7MvMXY+Uz3Mbtp83PHT0fEVadMXZtMsra8vpBDtlPyrfzJnm+D2wapsXZgpOZORa+bW+npOiwVWVeSpnDJ66M7Vc+XQSBqltSTAKZhNN5Oz+ZF0a0dZaFgAOJXjxHHzmzszF96mfzrYN58jMzErH2EbVSOan6ER43VLObxdEJCpJyurN3MFbWSMi2skYyNR+aE1tIPh/ml9fSAAPIx3jRkRlFWXmUVYBQJMyKyUAiNZqbPORmXNDZ51hRGkY8Yx5KjGIxGIwBliUxLpIqIBZEYxNvSCY5roSx3Usb9ALknytAPMPiz2suP4ekfBq7j81joPK49bTxXE1CxvOl7Y7T/AIiu7jJSx3RyQZKPa05arlInfbbKamiprvGw45Ce1dguzi0KQZh43AJPLynm3YPZP8TiRceClYt14Ce84NQAAOEzzu7ppxzU2uSgJZ3UsUyV5Mi9hHowGtRmtU0gNWFhyuU7QbIWopy4GeT7U2c1JyCMjoZ7tiUuJxvanZAqITbTP1imWqMsfqPMsJjKlFt5HZSORIBHIjiPKdDiq6nD77M4equS90EU/rCsG0I3ToBOZxKbrFTkQZEMSALmwvZbkgcTYac5tZtzy2V3/ZJWKAmd3gwYb2W7GIMNRYvYvSpMQF4soPPznRU+zyL+Y+wmfxlW35cJPWHTYy5ak2BsVf1H2ErrbDNsmHqCIfGSfyY1Vhm3oWFgez6dhNC0eIoSut5HZCfi+hl9UR9lJ+IT/KfuI5O029VryurLJW+c2c4cISfKT3JaBFaAVolsxrHfOJGuSOUH75t+3DpAI1aJ4ZymH1NQJXUo36xloLKKsOXDE6kD6x6uCUjIkHnrAaZSyUuq4N0z1HMSmMkTC8I1j6QQy6kbQDcMeMY8lRjGaOZF4A66RJEukcQBit9ZyHxM2p3GDcA+Kp+GOjA39bA/WdgxsJ4j8YNs79VKKm4QMxsci7ZfRQB7ycvF4Tdea4l7kmZznPp94XVP+fvBGiisnp/wowJ/h3qLYPUdgGIva2Q+s7M7IrgX/i2B6ED7zJ+GGHtgKZGrb59Sxlm08JiqzuKrVEoKrd2uHvnUt4TUOtr8pj/c6Mf/ADBtIY5T/rK45ELp7TpsEzMo3hZuM8p7KnGUKjmo9XugB+HVVnLHQ2I+XQn2FzPU9m1DY35R+UXxVtPEsoO6LkcJy1THY8nw0h1JVfvNfGY4J3jnMJw+wHnecF2p2ntFHU06q7rhWFOggfduT4XYjUAD30tnFOz8jqO9x+pRCOW8t5ewLr4kKk6qbGZeyMfilqd1U/GQjKui7h0zDLoeonRst5OSo8R7W4bu8Sy8MoFsvCNWq06a/NUdEXzLMFH3m38QKR/i2tyX7Sz4XbNqYjaVAIMqTis7ZZJTIN8+Z3R6zbHyOfKf1V9K4GgKVNKY0pqqjooA/aXmKIzVzoSGMfdRjyB9+EnAttVLKF/UfoM/6RZXUVjN0LhFsITK6Iylsyjaqqglmy1zY9B95CpCcALL1JlYztOV6EuZFRGLXMcmaMTkyUqJliGAVU/mMD/+yGD5jAifxIAY3zDp+4kyJA6+n7iSLwB7RwIkYGTtAINMzF0RqPUfvNKpBDrGGYZYkJbBD9VvS/7xLhP5h7Rp01THjGPJUYxnjmRaAOukeR4Tlu0PbWlhrotOpUq8FCNrx4f5aFujk21e0W1EoUmYsBYEkngo/rp6z5r29jzXrPUP5jkL3sugHoAB6Tu+120a1SgamKqKpexpYRGUnezHeVSDpbesoPtaeX4ipyme91rjNRCo2f8AntBatS1zy+8nVe3X/M4HVbh/l5UTlX0P8MAG2fRtpZ//ADada1Cec/AnH7+EqUic6FZrDkjqGH13/aeoNMdduiZbjNOEHGXGnuqbSTvy1j1FO4YGwqCeM30MPXBL+kewgIYhr2ym3QNxFFZAnwwHAe0qNKaNUShRx5RWFHn21ezpxeIYbvh3vE41so3Qq+ZJPsJ3/YbsdS2fv1APxayoG5BVJIUeeefPLlDtl7ANFxU3rk3LDkxNzYfvN6aceFndY83JL1iURijGbOdGZe0TvVQP0j6nP+k1Jj0232ZuZPtw+kjPxpxzvYlBJSIlioT05yZF2qnhdMbqgeWkrBA095Co9ppjjpllltcrDnHLQHfMfvZSBd5ahgS1paamXWI1NKqu81lzueHnr+/rMBUqfxhNvDuDx7wzz+W2vnpbzmuKgRnY/wAoytqbAa5amZSbRQVhcMN8LnYWG8WGbXt+U8el4thsMbMvhN7jO3nzhhaAtWD7rC4BDa5HIkftJ97GBIJBuIVTq3HnymctSWJUtnACqpg0saoDKrwC21xIFJOkZcVjC0x4xjxAxkWkjItAENJzHbHHGhTIp01aswO4CN4+1s+AtzI6zqEmZtzZa4gWOTBW3H4q+Vj01ipz14fT7J4mutfEsd6nRNQXGYqV0+ZVvqitcE8SLDnOAq1Bmw4k2A5k3nunZTai0S+ycUgUk1FVrgKwYnxqTzvwzvnxO743tvs9iKONfA7p7xam6vJkJ8L3/SVz9DyktPpjLQqVPkVm5sASPeGVNnrRTeqHxcv2nq+G2NTwWHWmo3qhyFgLs5gNPstSphquICvUNyQQCqX4Lf7yLm2x4v8ArnvgttYUcc1FjZcWhA/6tO7qPbfHtPenY2ngGK7N1BUGIwo7o02V0Jyu6m4ZRwE9n7K9oEx+HWqvhf5atK9zTrL86H7jmCIsrL3BMbj1WmCCNfbnKHqbgsGJ1+Zifqc5RtHZ7Eb9NmR+JXQjzHGYznFfm3G894r9DeRa6ePi+5uUYqHeN3Y3OYJy6AcBNbCVBOPFTFs1lCj3c9eAnQbDwb086js7NzsAByUAWhKOXi+Pa2K2YmF2h21TwYpbzKDWrUkG9+neUuelsvWblQ8p518XKQL4RdWWocutr58svoJUnbmr2eKU4Nr00PNVz9BnLp0OQozR4zQATH1N1DzOQ9f7XgWHWwlu0GuwXln6mMkyyu63wmsUw4HAn7RGoTLCmQkQs2k1GGV3SAjYgZdJMCKoMjAgW9GZozZdJUzRU1oaXq+kCLSfeSdnoTQ+ZvP+kDUDvj0hWEOZ6D7CDL/rHpGQrHGx9DBVqS3abf8AiZnJVhsNAPJh4CtSWCpDYFipLd6AhpcrQ2BlJoWrC0z6TSx6mUoNFohE0QiBjGMdojAEkasMvMXt1tHSOYByPbDYmCxdJlxBKVKZJp1aYvUVt0HwgDMZi4+2s53Y2z8RWpUa2LRGxdNXpU8RYiq2HLeHvPPlxseZM6DtBtzD4fe3m38RTO8MMLgmo2h5EWIIvoADNCpc2J1sCRyNs5jnW3HHOYrZbLZgbuOfDpM7F7Mqkh6tu7XMIOfNufSdVUzi3AciLjkZnp0zPTzXbW0mdu4w6ln/ADMoyUeZ0Ey8Pia+x64xV97D1SqYikuv8tQfzD66ccvUNo4OnmwAWwJJ0GXGeXbd2tTxmExBC2phSUJ47pure4GUJuVV1lHs+zsZTr01q02DU6ihlYZgg6GSrYRWzIB9J5B8H9vuiNQvdVJYKTpvZnd5Zz1JNspxuD5iO9XVZ471uLTRC6ACQDWkX2gp0ufSBvUZ9MhFbD1b60aNfxgDhmegztOd27so4nGYcNfu6VqjcjmQF5ksfopmxgU3d4+Vveb+Bw4ZQwA3gCAetr/aPDdqeS/MHYRbIo5AD2FpdIUxYW5Sc6XGUqxFQKCToM5bMHaON7xt1fkU5nmf6ScsvmLww+qlScuSx4/5aELKaC2EuWZRvRS5iQKyWHkar2a06I5b1TxxIGpIiqIUBnXVfaBMYbjD+YdD1g53TmdYr3BA5aV1KtoaKijQCVMVOoHsJHxT+hOzzf2H2EoX/WPSXYHjKV/1j0jJLbDZH/lMxEqzX23crYakZTEp4SryA6so/eFMWtWWpUkKWzqh/Mn/AHE/YS9dnVBxU9Cf3ENUbWIZffSVLh3Gqn0z+0kxk+UxCNJscpVSuZY7quuc0iGy0SxNEsDM0UTRCAMkkZFY+9w5QDyL4p7LVNoYSojtvYypTSouVt0PTQ245hsx5T0HEnOcB2uxZxe28PSB8OCqUlIuoBJAqO1zqwuot5eeXd12mObfDwOollsoyiKo4tJXXFfFHav8PgatjZ61qS8/H8x/7d6eIjalTuTQFtw2uc72Bvuzr/i7tnv8StBTdMOLtb/itw9Ft7zh6aTXGdMs8rvp0PYPHdxi0/S/gPrp9Z7h3Whnz7s8EVFI4EH2n0Hs+qKlFH5gTPkne23Df6RNGnCkpZSNFcoQ2SyJF2qNB1nQbGb8O3ImYmGS5h1JjT+U+kvDrtnnPqabkUGpVXLKGFvCWPW4AH1MuZ5tLtzWaZe2sdu/hrqRmfI8Jm4VIVtfD2qB+Dj/AHD+1vaVUhMMt/Xbqw189DUEsUSCS0RxNSpmxg+NqEP1AMIIg+PpllDDVb36TbC9OfOdoCrIu0HpPCNy8tCp3uIOzSyplKXk/wCDU1a1pWuIj1lvAmNjJ7lV7G/g6lhfy4AmA/xf4xybTTdHPrCtm3KixAy4i8DRanfEWT/m7vLr80ZC9pPcA9NRaA3he0rgC5BzGgtlAhHCq1TLkqkcYLvSaQ2B1PFMOMIDbwuwHXjAEljVCY/9ja961sllaoWkAIWuQtFaNNwxLE0SwMxiWIzF7XbUfB4V8QtvwihYEflLBT011hehO2xvWmDt3tLhcOCxqDvAPk3WYNa9hfTnx5zBTtSmKw6lalnsofdsTvnkOP8A7nn/AGvYnO7cQb3J46nS+XCZXk31G+PF+6b4dI2K2q+IsQEWrUc6+JrAZ8yzE+hnrxF5wnwfor3GIqgZPVWmG5imgJ9L1DO+Ak1UU1MpyvbPb4wdBn/MfCi83OgnVYnIGeCfEvbJrYtqf5MP4QObkeJv29IpN07dTbkKztUdnYks5LMx/UTcmToayMsoi02YadP2f2epYFsr6X+3Weq9mat6RT9M822FZqV+WXqNJ3PZTEDUn5hrzMxyu3VjNTp11BvDCK+gEEoHhCahzing/a1XCjLWG4MhfE2bcBwH94FSS8KVZSKLw1UtUuf0kDplCGOfrA8J849ftDagmuHjDk9VY6jvoRxHiHUf2vMqkZthtPPKY9eluORwvcdDJzn7XxZfoQhlgMHpmXIZMVU6tUL5k8I+Gq7x0t5RqdG+Z1lypabSac9uwGNwm6d5R4eI5f2kMPUmoakAq4MFrg2U8Bzj2ViNemGHnAXUrkZbiKbqcjcQc4o6GFmy2rqLBatO8MNRT5Sp1hYcovZLWW3KMGHenpAVYqbiWmvf9N7f8MD63kKi7azjw+ZEDixlyFFhcMpvJIIESrLRGEmolQqdZMRlEsAhaJE6fOW3laCXosk240SxRSgY6wTaeFStSqUqg3kqI6svMEERRQofM+MTEbNqtS3rMjeFhY3XgfUWyMA2lt+rXye2Zz3crk5aRRTHGb7bZZWXT2v4Y4fu9mYf/wDQVKht/O7Ef7d0ek6lTFFJvq54GxreE9DPmfazd5iKzHjVqH/cYopWHpZ+RQVjARRS0VsbOxDHdpi+6SLjTeOluk9I2PTKqCCMiFPLXW3QGKKZ5N+Px22BXwjQnmOMOpqIooFRCScUUEpUWsw6j7w+oc4oppgy5Eb5QbaC33W9P8+saKPLxGHodTL6OZiimcb3wTTMnrFFN3Mg4lRMUURoPYzPxmE4jSKKEKsyohEiHMUUtK5HHERt3PKKKKyHKTqTEoiikXpSxRLBFFAkwZIRRRU1q1QIv4scvrFFHCf/2Q=="
+                                                alt="" class="header__notify-img">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Ohui chính thức ra mắt dòng son lì mới
+                                                    THE FIRST GENITURE LIPSTICK</span>
+                                                <span class="header__notify-descriotion">Một làn môi căng mềm, quyến rũ
+                                                    với sắc màu nổi bật luôn là điều mà các quý cô ao ước</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <footer class="header__notify-footer">
+                                    <a href="" class="header__notify-footer-btn">Xem tất cả</a>
+                                </footer>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon far fa-question-circle"></i>
+                                Trợ giúp
+                            </a>
+                        </li>
+                        <!-- <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng
+                            kí</li>
+                        <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li> -->
+
+                        <li class="header__navbar-item header__navbar-user">
+                            <img src="data:image/png;base64,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"
+                                alt="" class="header__navbar-user-img">
+                            <span class="header__navbar-user-name">Quang Nhật</span>
+
+                            <ul class="header__navbar-user-menu">
+                                <li class="header__navbar-user-item"><a href="">Tài khoản của tôi</a></li>
+                                <li class="header__navbar-user-item"><a href="">Đại chỉ của tôi</a></li>
+                                <li class="header__navbar-user-item"><a href="">Đơn mua</a></li>
+                                <li class="header__navbar-user-item header__navbar-user-item--separate"><a href="">Đăng
+                                        xuất</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header with search -->
+
+                <div class="header-with-search">
+                    <!-- Nav__mobile -->
+                    <label for="nav__mobile-input" class="header-with-search-bars hide-on-pc">
+                        <i class="header-with-search-bars-icon fas fa-bars"></i>
+                    </label>
+                    <!-- Ovelay mobile -->
+                    <input type="checkbox" hidden id="nav__mobile-input" class="nav__input">
+
+                    <label for="nav__mobile-input" class="nav__ovelay"></label>
+
+                    <div class="nav__mobile">
+                        <label for="nav__mobile-input" class="nav__mobile-times">
+                            <i class="nav__mobile-times-icon fas fa-times"></i>
+                        </label>
+                        <ul class="nav__mobile-list">
+                            <li class="nav__mobile-link"><a href="">Trang chủ</a></li>
+                            <li class="nav__mobile-link"><a href="">Đăng nhập</a></li>
+                            <li class="nav__mobile-link"><a href="">Đăng ký</a></li>
+                            <li class="nav__mobile-link"><a href="">Cài đặt</a></li>
+                        </ul>
+                    </div>
+                    <!-- Search mobile -->
+                    <label for="mobile-search-checkbox" class="header__mobile-search hide-on-pc hide-on-tablet">
+                        <i class="header__mobile-search-icon fas fa-search"></i>
+                    </label>
+
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">
+
+                    <div class="header__logo hide-on-tablet">
+                        <a href="/" class="header__logo-link">
+                            <svg class="header__logo-img" viewBox="0 0 192 65">
+                                <g fill-rule="evenodd">
+                                    <path fill="#fff"
+                                        d="M35.6717403 44.953764c-.3333497 2.7510509-2.0003116 4.9543414-4.5823845 6.0575984-1.4379707.6145919-3.36871.9463856-4.896954.8421628-2.3840266-.0911143-4.6237865-.6708937-6.6883352-1.7307424-.7375522-.3788551-1.8370513-1.1352759-2.6813095-1.8437757-.213839-.1790053-.239235-.2937577-.0977428-.4944671.0764015-.1151823.2172535-.3229831.5286218-.7791994.45158-.6616533.5079208-.7446018.5587128-.8221779.14448-.2217688.3792333-.2411091.6107855-.0588804.0243289.0189105.0243289.0189105.0426824.0333083.0379873.0294402.0379873.0294402.1276204.0990653.0907002.0706996.14448.1123887.166248.1287205 2.2265285 1.7438508 4.8196989 2.7495466 7.4376251 2.8501162 3.6423042-.0496401 6.2615109-1.6873341 6.7308041-4.2020035.5160305-2.7675977-1.6565047-5.1582742-5.9070334-6.4908212-1.329344-.4166762-4.6895175-1.7616869-5.3090528-2.1250697-2.9094471-1.7071043-4.2697358-3.9430584-4.0763845-6.7048539.296216-3.8283059 3.8501677-6.6835796 8.340785-6.702705 2.0082079-.004083 4.0121475.4132378 5.937338 1.2244562.6816382.2873109 1.8987274.9496089 2.3189359 1.2633517.2420093.1777159.2898136.384872.1510957.60836-.0774686.12958-.2055158.3350171-.4754821.7632974l-.0029878.0047276c-.3553311.5640922-.3664286.5817134-.447952.7136572-.140852.2144625-.3064598.2344475-.5604202.0732783-2.0600669-1.3839063-4.3437898-2.0801572-6.8554368-2.130442-3.126914.061889-5.4706057 1.9228561-5.6246892 4.4579402-.0409751 2.2896772 1.676352 3.9613243 5.3858811 5.2358503 7.529819 2.4196871 10.4113092 5.25648 9.869029 9.7292478M26.3725216 5.42669372c4.9022893 0 8.8982174 4.65220288 9.0851664 10.47578358H17.2875686c.186949-5.8235807 4.1828771-10.47578358 9.084953-10.47578358m25.370857 11.57065968c0-.6047069-.4870064-1.0948761-1.0875481-1.0948761h-11.77736c-.28896-7.68927544-5.7774923-13.82058185-12.5059489-13.82058185-6.7282432 0-12.2167755 6.13130641-12.5057355 13.82058185l-11.79421958.0002149c-.59136492.0107446-1.06748731.4968309-1.06748731 1.0946612 0 .0285807.00106706.0569465.00320118.0848825H.99995732l1.6812605 37.0613963c.00021341.1031483.00405483.2071562.01173767.3118087.00170729.0236381.003628.0470614.00554871.0704847l.00362801.0782207.00405483.004083c.25545428 2.5789222 2.12707837 4.6560709 4.67201764 4.7519129l.00576212.0055872h37.4122078c.0177132.0002149.0354264.0004298.0531396.0004298.0177132 0 .0354264-.0002149.0531396-.0004298h.0796027l.0017073-.0015043c2.589329-.0706995 4.6867431-2.1768587 4.9082648-4.787585l.0012805-.0012893.0017073-.0350275c.0021341-.0275062.0040548-.0547975.0057621-.0823037.0040548-.065757.0068292-.1312992.0078963-.1964115l1.8344904-37.207738h-.0012805c.001067-.0186956.0014939-.0376062.0014939-.0565167M176.465457 41.1518926c.720839-2.3512494 2.900423-3.9186779 5.443734-3.9186779 2.427686 0 4.739107 1.6486899 5.537598 3.9141989l.054826.1556978h-11.082664l.046506-.1512188zm13.50267 3.4063683c.014933.0006399.014933.0006399.036906.0008531.021973-.0002132.021973-.0002132.044372-.0008531.53055-.0243144.950595-.4766911.950595-1.0271786 0-.0266606-.000853-.0496953-.00256-.0865936.000427-.0068251.000427-.020262.000427-.0635588 0-5.1926268-4.070748-9.4007319-9.09145-9.4007319-5.020488 0-9.091235 4.2081051-9.091235 9.4007319 0 .3871116.022399.7731567.067838 1.1568557l.00256.0204753.01408.1013102c.250022 1.8683731 1.047233 3.5831812 2.306302 4.9708108-.00064-.0006399.00064.0006399.007253.0078915 1.396026 1.536289 3.291455 2.5833031 5.393601 2.9748936l.02752.0053321v-.0027727l.13653.0228215c.070186.0119439.144211.0236746.243409.039031 2.766879.332724 5.221231-.0661182 7.299484-1.1127057.511777-.2578611.971928-.5423827 1.37064-.8429007.128211-.0968312.243622-.1904632.34346-.2781231.051412-.0452164.092372-.083181.114131-.1051493.468898-.4830897.498124-.6543572.215249-1.0954297-.31146-.4956734-.586228-.9179769-.821744-1.2675504-.082345-.1224254-.154023-.2267215-.214396-.3133151-.033279-.0475624-.033279-.0475624-.054399-.0776356-.008319-.0117306-.008319-.0117306-.013866-.0191956l-.00256-.0038391c-.256208-.3188605-.431565-.3480805-.715933-.0970445-.030292.0268739-.131624.1051493-.14997.1245582-1.999321 1.775381-4.729508 2.3465571-7.455854 1.7760208-.507724-.1362888-.982595-.3094759-1.419919-.5184948-1.708127-.8565509-2.918343-2.3826022-3.267563-4.1490253l-.02752-.1394881h13.754612zM154.831964 41.1518926c.720831-2.3512494 2.900389-3.9186779 5.44367-3.9186779 2.427657 0 4.739052 1.6486899 5.537747 3.9141989l.054612.1556978h-11.082534l.046505-.1512188zm13.502512 3.4063683c.015146.0006399.015146.0006399.037118.0008531.02176-.0002132.02176-.0002132.044159-.0008531.530543-.0243144.950584-.4766911.950584-1.0271786 0-.0266606-.000854-.0496953-.00256-.0865936.000426-.0068251.000426-.020262.000426-.0635588 0-5.1926268-4.070699-9.4007319-9.091342-9.4007319-5.020217 0-9.091343 4.2081051-9.091343 9.4007319 0 .3871116.022826.7731567.068051 1.1568557l.00256.0204753.01408.1013102c.250019 1.8683731 1.04722 3.5831812 2.306274 4.9708108-.00064-.0006399.00064.0006399.007254.0078915 1.396009 1.536289 3.291417 2.5833031 5.393538 2.9748936l.027519.0053321v-.0027727l.136529.0228215c.070184.0119439.144209.0236746.243619.039031 2.766847.332724 5.22117-.0661182 7.299185-1.1127057.511771-.2578611.971917-.5423827 1.370624-.8429007.128209-.0968312.243619-.1904632.343456-.2781231.051412-.0452164.09237-.083181.11413-.1051493.468892-.4830897.498118-.6543572.215246-1.0954297-.311457-.4956734-.586221-.9179769-.821734-1.2675504-.082344-.1224254-.154022-.2267215-.21418-.3133151-.033492-.0475624-.033492-.0475624-.054612-.0776356-.008319-.0117306-.008319-.0117306-.013866-.0191956l-.002346-.0038391c-.256419-.3188605-.431774-.3480805-.716138-.0970445-.030292.0268739-.131623.1051493-.149969.1245582-1.999084 1.775381-4.729452 2.3465571-7.455767 1.7760208-.507717-.1362888-.982582-.3094759-1.419902-.5184948-1.708107-.8565509-2.918095-2.3826022-3.267311-4.1490253l-.027733-.1394881h13.754451zM138.32144123 49.7357905c-3.38129629 0-6.14681004-2.6808521-6.23169343-6.04042014v-.31621743c.08401943-3.35418649 2.85039714-6.03546919 6.23169343-6.03546919 3.44242097 0 6.23320537 2.7740599 6.23320537 6.1960534 0 3.42199346-2.7907844 6.19605336-6.23320537 6.19605336m.00172791-15.67913203c-2.21776751 0-4.33682838.7553485-6.03989586 2.140764l-.19352548.1573553V34.6208558c0-.4623792-.0993546-.56419733-.56740117-.56419733h-2.17651376c-.47409424 0-.56761716.09428403-.56761716.56419733v27.6400724c0 .4539841.10583425.5641973.56761716.5641973h2.17651376c.46351081 0 .56740117-.1078454.56740117-.5641973V50.734168l.19352548.1573553c1.70328347 1.3856307 3.82234434 2.1409792 6.03989586 2.1409792 5.27140956 0 9.54473746-4.2479474 9.54473746-9.48802964 0-5.239867-4.2733279-9.48781439-9.54473746-9.48781439M115.907646 49.5240292c-3.449458 0-6.245805-2.7496948-6.245805-6.1425854 0-3.3928907 2.79656-6.1427988 6.245805-6.1427988 3.448821 0 6.24538 2.7499081 6.24538 6.1427988 0 3.3926772-2.796346 6.1425854-6.24538 6.1425854m.001914-15.5438312c-5.28187 0-9.563025 4.2112903-9.563025 9.4059406 0 5.1944369 4.281155 9.4059406 9.563025 9.4059406 5.281657 0 9.562387-4.2115037 9.562387-9.4059406 0-5.1946503-4.280517-9.4059406-9.562387-9.4059406M94.5919049 34.1890939c-1.9281307 0-3.7938902.6198995-5.3417715 1.7656047l-.188189.1393105V23.2574169c0-.4254677-.1395825-.5643476-.5649971-.5643476h-2.2782698c-.4600414 0-.5652122.1100273-.5652122.5643476v29.2834155c0 .443339.1135587.5647782.5652122.5647782h2.2782698c.4226187 0 .5649971-.1457701.5649971-.5647782v-9.5648406c.023658-3.011002 2.4931278-5.4412923 5.5299605-5.4412923 3.0445753 0 5.516841 2.4421328 5.5297454 5.4630394v9.5430935c0 .4844647.0806524.5645628.5652122.5645628h2.2726775c.481764 0 .565212-.0824666.565212-.5645628v-9.5710848c-.018066-4.8280677-4.0440197-8.7806537-8.9328471-8.7806537M62.8459442 47.7938061l-.0053397.0081519c-.3248668.4921188-.4609221.6991347-.5369593.8179812-.2560916.3812097-.224267.551113.1668119.8816949.91266.7358184 2.0858968 1.508535 2.8774525 1.8955369 2.2023021 1.076912 4.5810275 1.646045 7.1017886 1.6975309 1.6283921.0821628 3.6734936-.3050536 5.1963734-.9842376 2.7569891-1.2298679 4.5131066-3.6269626 4.8208863-6.5794607.4985136-4.7841067-2.6143125-7.7747902-10.6321784-10.1849709l-.0021359-.0006435c-3.7356476-1.2047686-5.4904836-2.8064071-5.4911243-5.0426086.1099976-2.4715346 2.4015793-4.3179454 5.4932602-4.4331449 2.4904317.0062212 4.6923065.6675996 6.8557356 2.0598624.4562232.2767364.666607.2256796.9733188-.172263.035242-.0587797.1332787-.2012238.543367-.790093l.0012815-.0019308c.3829626-.5500403.5089793-.7336731.5403767-.7879478.258441-.4863266.2214903-.6738208-.244985-1.0046173-.459427-.3290803-1.7535544-1.0024722-2.4936356-1.2978721-2.0583439-.8211991-4.1863175-1.2199998-6.3042524-1.1788111-4.8198184.1046878-8.578747 3.2393171-8.8265087 7.3515337-.1572005 2.9703036 1.350301 5.3588174 4.5000778 7.124567.8829712.4661613 4.1115618 1.6865902 5.6184225 2.1278667 4.2847814 1.2547527 6.5186944 3.5630343 6.0571315 6.2864205-.4192725 2.4743234-3.0117991 4.1199394-6.6498372 4.2325647-2.6382344-.0549182-5.2963324-1.0217793-7.6043603-2.7562084-.0115337-.0083664-.0700567-.0519149-.1779185-.1323615-.1516472-.1130543-.1516472-.1130543-.1742875-.1300017-.4705335-.3247898-.7473431-.2977598-1.0346184.1302162-.0346012.0529875-.3919333.5963776-.5681431.8632459">
+                                    </path>
+                                </g>
+                            </svg></a>
+                    </div>
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input" placeholder="Nhập thứ bạn muốn nào">
+
+                            <!-- Search History -->
+
+                            <div class="header__search-history">
+                                <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
+                                <ul class="header__search-history-list">
+                                    <li class="header__search-history-item">
+                                        <a href="">Kem dưỡng da</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="">Son nữ đẹp</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="header__search-select">
+                            <span class="header__search-select-label">Trong shop</span>
+                            <i class="header__search-select-icon fas fa-angle-down"></i>
+
+                            <ul class="header__search-option">
+                                <li class="header__search-option-item header__search-option-item--active">
+                                    <span>Trong shop</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="header__search-option-item">
+                                    <span>Ngoài shop</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="header__search-btn">
+                            <i class="header__search-btn-icon fas fa-search"></i>
+                        </button>
+                    </div>
+
+                    <!-- Cart layout -->
+
+                    <div class="header__cart">
+                        <div class="header__cart-wrap">
+                            <i class="header__cart-icon fas fa-shopping-cart"></i>
+
+                            <span class="header__cart-notice">3</span>
+
+                            <!-- No cart : header__cart-list--no-cart -->
+
+                            <div class="header__cart-list">
+                                <img src="./assets/img/no_cart.png" alt="" class="header__cart-no-cart-img">
+                                <span class="header__cart-list-no-cart-msg">
+                                    Chưa có sản phẩm
+                                </span>
+
+                                <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
+                                <!-- Cart item -->
+                                <ul class="header__cart-list-item">
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/313b255639356abb9a1e340a4f9f4bf0" alt=""
+                                            class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Xiaomi Redmi Note 7 Xiaomi Redmi Note
+                                                    7 Xiaomi Redmi Note 7 Xiaomi Redmi Note 7 Xiaomi Redmi Note 7 Xiaomi
+                                                    Redmi Note 7 Xiaomi Redmi Note 7 Xiaomi Redmi Note 7 </h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">3.990.000vnd</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng : Điện thoại
+                                                </span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                                <span class="header__cart-remove-icon">
+                                                    <i class="times fas fa-times"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/313b255639356abb9a1e340a4f9f4bf0" alt=""
+                                            class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Bộ kem đặc trị vùng mắt</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">2.000.000vnd</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">2</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng : Bạc
+                                                </span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                                <span class="header__cart-remove-icon">
+                                                    <i class="times fas fa-times"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/313b255639356abb9a1e340a4f9f4bf0" alt=""
+                                            class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Bộ kem đặc trị vùng mắt</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">2.000.000vnd</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">2</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng : Bạc
+                                                </span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                                <span class="header__cart-remove-icon">
+                                                    <i class="times fas fa-times"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/313b255639356abb9a1e340a4f9f4bf0" alt=""
+                                            class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Xiaomi Redmi Note 7</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">3.990.000vnd</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng : Điện thoại
+                                                </span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                                <span class="header__cart-remove-icon">
+                                                    <i class="times fas fa-times"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/313b255639356abb9a1e340a4f9f4bf0" alt=""
+                                            class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Bộ kem đặc trị vùng mắt</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">2.000.000vnd</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">2</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng : Bạc
+                                                </span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                                <span class="header__cart-remove-icon">
+                                                    <i class="times fas fa-times"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/313b255639356abb9a1e340a4f9f4bf0" alt=""
+                                            class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Bộ kem đặc trị vùng mắt</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">2.000.000vnd</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">2</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng : Bạc
+                                                </span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                                <span class="header__cart-remove-icon">
+                                                    <i class="times fas fa-times"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/313b255639356abb9a1e340a4f9f4bf0" alt=""
+                                            class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Xiaomi Redmi Note 7</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">3.990.000vnd</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng : Điện thoại
+                                                </span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                                <span class="header__cart-remove-icon">
+                                                    <i class="times fas fa-times"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/313b255639356abb9a1e340a4f9f4bf0" alt=""
+                                            class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Bộ kem đặc trị vùng mắt</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">2.000.000vnd</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">2</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng : Bạc
+                                                </span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                                <span class="header__cart-remove-icon">
+                                                    <i class="times fas fa-times"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="https://cf.shopee.vn/file/313b255639356abb9a1e340a4f9f4bf0" alt=""
+                                            class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Bộ kem đặc trị vùng mắt</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">2.000.000vnd</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">2</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-description">
+                                                    Phân loại hàng : Bạc
+                                                </span>
+                                                <span class="header__cart-item-remove">Xoá</span>
+                                                <span class="header__cart-remove-icon">
+                                                    <i class="times fas fa-times"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <a class="header__cart-view-cart btn btn--primary">Xem giỏ hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sort bar -->
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Liên quan</a>
+                </li>
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
+        </header>
+
+        <!-- Container -->
+
+        <div class="app__container">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0">
+                        <nav class="category">
+                            <h3 class="category__heading">
+                                Danh mục
+                            </h3>
+                            <ul class="category-list">
+                                <li class="category-item category-item--active">
+                                    <a href="" class="category-item__link">Trang Điểm Mắt</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="" class="category-item__link">Trang Điểm Môi</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="" class="category-item__link">Trang Điểm Miệng</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="" class="category-item__link">Trang Điểm Chân Mày</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col l-10 m-12 c-12">
+                        <!-- Filter -->
+                        <div class="home-filter hide-on-mobile-tablet">
+                            <span class="home-filter__lable">Sắp xếp theo</span>
+                            <button class="home-filter__btn btn">Phổ biến</button>
+                            <button class="home-filter__btn btn btn--primary">Mới nhất</button>
+                            <button class="home-filter__btn btn">Bán chạy</button>
+
+                            <div class="select-input">
+                                <span class="select-input__lable">Giá</span>
+                                <i class="select-input__icon fas fa-angle-down"></i>
+
+                                <!-- List option -->
+
+                                <ul class="select-input__list">
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">Giá: Thấp đến Cao</a>
+                                    </li>
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">Giá: Cao đến Thấp</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+                            <div class="home-filter__page">
+                                <span class="home-filter__page-num">
+                                    <span class="home-filter__page-current">1</span>/14
+                                </span>
+
+                                <div class="home-filter__page-control">
+                                    <a href="" class="home-filter__page-btn home-filter__page-btn--disabled">
+                                        <i class="home-filter__page-icon fas fa-angle-left"></i>
+                                    </a>
+                                    <a href="" class="home-filter__page-btn">
+                                        <i class="home-filter__page-icon fas fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile catelory -->
+                        <nav class="mobile-catelory hide-on-pc">
+                            <ul class="mobile-catelory__list">
+                                <li class="mobile-catelory__item">
+                                    <a href="#" class="mobile-catelory__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-catelory__item">
+                                    <a href="" class="mobile-catelory__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li><li class="mobile-catelory__item">
+                                    <a href="" class="mobile-catelory__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-catelory__item">
+                                    <a href="" class="mobile-catelory__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-catelory__item">
+                                    <a href="" class="mobile-catelory__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li><li class="mobile-catelory__item">
+                                    <a href="" class="mobile-catelory__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-catelory__item">
+                                    <a href="" class="mobile-catelory__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-catelory__item">
+                                    <a href="" class="mobile-catelory__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li><li class="mobile-catelory__item">
+                                    <a href="" class="mobile-catelory__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-catelory__item">
+                                    <a href="" class="mobile-catelory__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-catelory__item">
+                                    <a href="" class="mobile-catelory__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li><li class="mobile-catelory__item">
+                                    <a href="" class="mobile-catelory__link">Dụng cụ & Thiết bị tiện ích</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <!-- Product -->
+                        <div class="home-product">
+                            <div class="row sm-gutter">
+                                <!-- One Product -->
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/016907cce2fec4ef441bb608195a9118)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT)Bóp ví nam dài Hàn Quốc da PU
+                                            Flancoo FSP9S051 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">50.000đ</span>
+                                            <span class="home-product-item__price-current">30.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">88 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/2577ac71c698ebbb48680b0381ea52ee_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT)Ví nam - nữ thời trang da thật
+                                            LATA LVN17 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">350.000đ</span>
+                                            <span class="home-product-item__price-current">169.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">72 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/cf7f582f99852555f1a6fbd0d64639b7_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT)Ví nam - nữ thời trang da bò
+                                            thật YUUMY YVN23 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">350.000đ</span>
+                                            <span class="home-product-item__price-current">99.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">14 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/41ff980dcbb3b72dbb9e0914a0d63e78_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT) Ví nam-nữ thời trang da bò
+                                            thật YUUMY YVN11 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">50.000đ</span>
+                                            <span class="home-product-item__price-current">159.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">1 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/5047f757b7195a30efbf06b060ec215e_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT) Ví nam-nữ thời trang da bò
+                                            thật YUUMY YVN8 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">350.000đ</span>
+                                            <span class="home-product-item__price-current">1750.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">0 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/6955a63380c68c9bc97d6566f10e730d_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT) Ví nam - nữ thời trang da bò
+                                            thật YUUMY YVN17 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">350.000đ</span>
+                                            <span class="home-product-item__price-current">170.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">0 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/49c5fa512f0ac595a5104eb4ce936779_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT) Ví nam - nữ thời trang da sáp
+                                            LATA LVN009 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">350.000đ</span>
+                                            <span class="home-product-item__price-current">179.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">88 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/8dc9b34a7084312fc47f805e4b887d75_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT) Ví nam - nữ thời trang da
+                                            thật LATA LVN35 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">350.000đ</span>
+                                            <span class="home-product-item__price-current">179.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">47 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/d0775a60dd67e0e9f34e526d2921621d_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT) Ví nam - nữ thời trang da
+                                            thật LATA LVN18 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">350.000đ</span>
+                                            <span class="home-product-item__price-current">179.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">22 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/dbcdfc4e747eea61ca39c3666fa8bdaa_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT) YUUMY YVN15 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">350.000đ</span>
+                                            <span class="home-product-item__price-current">210.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">2 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/605182a0d1f267092789731b01617619_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT) Ví nam-nữ da thật Lata LVN30
+                                            (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">350.000đ</span>
+                                            <span class="home-product-item__price-current">210.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">16 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/c29d5dc8d1d6d2a243da8f4e69a15068_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT) Ví nam thời trang da thật
+                                            LATA LVN47 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">400.000đ</span>
+                                            <span class="home-product-item__price-current">240.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">1 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/fd8e4e98e6c2cdad6213f2775d00ca5d_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT) Ví nam thời trang da thật
+                                            LATA LVN51 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">400.000đ</span>
+                                            <span class="home-product-item__price-current">210.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">0 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/697183a7ff14e007d71a1be84ac032ca_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT) Ví nam thời trang da thật
+                                            LATA LVN58 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">360.000đ</span>
+                                            <span class="home-product-item__price-current">216.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">20 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <!-- Product item -->
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img"
+                                            style="background-image: url(https://cf.shopee.vn/file/5b44bbf5049e6e2c98ef1c4659d655e7_tn)">
+                                        </div>
+                                        <h4 class="home-product-item__name">(GIÁ HỦY DIỆT) Ví nam-nữ thời trang da thật
+                                            LATA LVN54 (Nhiều màu)</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">580.000đ</span>
+                                            <span class="home-product-item__price-current">348.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class=" fas fa-star"></i>
+                                            </div>
+                                            <div class="home-product-item__sold">0 đã bán</div>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Ví dài</span>
+                                            <span class="home-product-item__origin-name">TP.Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="home-product-item__favourite">
+                                            <i class="fas fa-check"></i>
+                                            <span>Yêu Thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">43%</span>
+                                            <span class="home-product-item__sale-off-lable">GIẢM</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pagination -->
+                        <ul class="pagination home-product__pagination">
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">
+                                    <i class="pagination-item__icon fas fa-angle-left"></i>
+                                </a>
+                            </li>
+                            <li class="pagination-item pagination-item--active">
+                                <a href="" class="pagination-item__link">1</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">2</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">3</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">4</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">5</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">...</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">14</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">
+                                    <i class="pagination-item__icon fas fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+
+        <footer class="footer">
+            <div class="grid wide">
+                <div class="row footer-grid">
+                    <div class="col l-2-4 m-4 c-6">
+                        <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__item__link">Trung tâm trợ giúp</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item__link">YT shop mall</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item__link">Hướng dẫn mua hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2-4 m-4 c-6">
+                        <h3 class="footer__heading">Giới thiệu</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__item__link">Giới thiệu</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item__link">Tuyển dụng</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item__link">Điều khoản</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2-4 m-4 c-6">
+                        <h3 class="footer__heading">Danh mục</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__item__link">Chính sách bảo hành</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item__link">Các quy định</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item__link">Tuyển dụng</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2-4 m-4 c-6">
+                        <h3 class="footer__heading">Theo dõi</h3>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a href="" class="footer__item__link">
+                                    <i class="footer__item-icon fab fa-facebook"></i>
+                                    Facebook
+                                </a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item__link">
+                                    <i class="footer__item-icon fab fa-instagram-square"></i>
+                                    Instagram
+                                </a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__item__link">
+                                    <i class="footer__item-icon fab fa-linkedin"></i>
+                                    LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2-4 m-8 c-12">
+                        <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
+                        <div class="footer__download">
+                            <img src="/assets/img/qr_code.png" alt="" class="footer__download-qr">
+                            <div class="footer__download-apps">
+                                <a href="" class="footer__download-apps-link">
+                                    <img src="/assets/img/google_play.png" alt="" class="footer__download-apps-img">
+                                </a>
+                                <a href="" class="footer__download-apps-link">
+                                    <img src="/assets/img/app_store.png" alt="" class="footer__download-apps-img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="grid wide">
+                    <div class="footer__bottom-heading">
+                        <a href="" class="footer__bottom-policy">chính sách bảo mật</a>
+                        <a href="" class="footer__bottom-policy">quy chế hoạt động</a>
+                        <a href="" class="footer__bottom-policy">chính sách vận chuyển</a>
+                        <a href="" class="footer__bottom-policy">chính sách trả hàng và hoàn tiền</a>
+                    </div>
+                    <div class="footer__bottom-img">
+                        <a href="" class="footer__bottom-link">
+                            <div class="footer__bottom-img-polycy1"></div>
+                        </a>
+                        <a href="" class="footer__bottom-link">
+                            <div class="footer__bottom-img-polycy2"></div>
+                        </a>
+                    </div>
+                    <span class="footer__bottom-company">Công ty TNHH YT</span>
+                    <div class="footer__text">
+                        <p class="footer__text1">Địa chỉ: 33B, đường Lê Cao Lãng, phường Phú Thạnh, quận Tân Phú. Tổng
+                            đài hỗ trợ: 19001221 - Email: newt1592@gmail.com.</p>
+                        <p class="footer__text2">Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch & Đầu tư TP Hà Nội cấp
+                            lần đầu ngày 10/02/2015.</p>
+                        <p class="footer__text3">© 2020 YT. Tất cả các quyền được bảo lưu.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal layout -->
+
+    <!-- <div class="modal">
+        <div class="modal__overlay">
+
+        </div>
+        <div class="modal__body"> -->
+
+    <!-- Viết riêng From Login/Register -->
+    <!-- Register from  -->
+
+    <!-- <div class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng ký</h3>
+                        <span class="auth-form__switch-btn">Đăng nhập</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="email" class="auth-form__input" placeholder="Nhập email">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            Bằng việc đăng ký, bạn đã đồng ý với tôi về
+                            <a href="" class="auth-form__text-link">&nbsp;Điều khoản và dịch vụ&nbsp;</a> &
+                            <a href="" class="auth-form__text-link">&nbsp;Chính sách bảo mật</a>
+                        </p>
+                    </div>
+
+                    <div class="auth-form__controls">
+                        <button class="btn auth-form__controls--back btn--normal">TRỞ LẠI</button>
+                        <button class="btn btn--primary">ĐĂNG KÝ</button>
+                    </div>
+                </div>
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials--f btn btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                        <div class="auth-form__text--btn">Đăng nhập với Facebook</div>
+                    </a>
+                    <a href="" class="auth-form__socials--g btn btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fab fa-google"></i>
+                        <div class="auth-form__text--btn">Đăng nhập với Google</div>
+                    </a>
+                </div>
+            </div> -->
+
+    <!-- Login from  -->
+
+    <!-- <div class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng nhập</h3>
+                        <span class="auth-form__switch-btn">Đăng ký</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="email" class="auth-form__input" placeholder="Nhập email">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <div class="auth-form__help">
+                            <a class="auth-form__help-link auth-form__help--forgot">Quên Mật Khẩu</a>
+                            <span class="auth-form__help-separate"></span>
+                            <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                        </div>
+                    </div>
+
+                    <div class="auth-form__controls">
+                        <button class="btn auth-form__controls--back btn--normal">TRỞ LẠI</button>
+                        <button class="btn btn--primary">ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials--f btn btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                        <div class="auth-form__text--btn">Đăng nhập với Facebook</div>
+                    </a>
+                    <a href="" class="auth-form__socials--g btn btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fab fa-google"></i>
+                        <div class="auth-form__text--btn">Đăng nhập với Google</div>
+                    </a>
+                </div>
+            </div> 
+        </div>-->
+
+    </div>
+</body>
+
+</html>
