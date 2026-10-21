@@ -1,13 +1,164 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f9;
-    margin-top: 50px;
+/* Cài đặt chung */
+:root {
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --primary-color: #58a6ff;
+    --card-bg: #161b22;
 }
-.avatar {
-    width: 150px;
-    height: 150px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* Thanh Menu */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo { font-size: 24px; font-weight: 800; }
+.logo span { color: var(--primary-color); }
+
+.nav-links { display: flex; gap: 30px; }
+.nav-links a { font-weight: 600; transition: color 0.3s; }
+.nav-links a:hover { color: var(--primary-color); }
+
+/* Phần Hero */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 10%;
+    margin-top: 60px;
+}
+
+.hero-content { max-width: 600px; }
+.hero h1 { font-size: 3.5rem; margin-bottom: 10px; line-height: 1.2; }
+.highlight { color: var(--primary-color); }
+.hero h2 { font-size: 1.5rem; font-weight: 400; margin-bottom: 20px; color: #8b949e; }
+.hero p { margin-bottom: 30px; font-size: 1.1rem; }
+
+.social-links { display: flex; gap: 20px; }
+.social-links a { font-size: 1.5rem; transition: transform 0.3s, color 0.3s; }
+.social-links a:hover { transform: translateY(-5px); color: var(--primary-color); }
+
+/* Ảnh đại diện phát sáng */
+.hero-image img {
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #333;
+    border: 4px solid var(--card-bg);
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.4);
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Các Section (About, Projects) */
+.section { padding: 100px 10%; }
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+/* Kỹ năng */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 150px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-color: var(--primary-color);
+}
+.skill-card i { font-size: 3rem; margin-bottom: 15px; }
+
+/* Dự án */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.3s;
+}
+
+.project-card:hover { transform: translateY(-10px); }
+.project-img { height: 200px; width: 100%; }
+.project-info { padding: 20px; }
+.project-info h3 { margin-bottom: 10px; }
+.project-info p { color: #8b949e; margin-bottom: 20px; font-size: 0.95rem; }
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+.btn:hover { background-color: #1f6feb; }
+
+/* Footer */
+footer { text-align: center; padding: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: #8b949e; }
+
+/* Hiệu ứng xuất hiện khi cuộn chuột (Scroll Reveal) */
+.hidden { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
+.show { opacity: 1; transform: translateY(0); }
+
+/* Giao diện cho Điện thoại */
+@media (max-width: 768px) {
+    .hero { flex-direction: column-reverse; justify-content: center; text-align: center; padding-top: 100px; }
+    .hero-image img { width: 250px; height: 250px; margin-bottom: 30px; }
+    .social-links { justify-content: center; }
+    .nav-links { display: none; } /* Ẩn menu trên mobile */
+    .hero h1 { font-size: 2.5rem; }
 }
