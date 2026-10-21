@@ -1,44 +1,91 @@
-// Hiệu ứng hiển thị dần khi cuộn trang
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Xử lý menu Hamburger trên Mobile
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
-});
 
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el));
+    // Đóng menu khi click vào link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
 
-// Hiệu ứng đánh máy chữ (Typing effect)
-const textElement = document.querySelector('.typing-text');
-const textArray = ["Mình là một Lập trình viên Web.", "Mình là một Sinh viên CNTT.", "Mình yêu thích sáng tạo."];
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+    // 2. Hiệu ứng gõ chữ (Typing Effect)
+    const typingText = document.querySelector('.typing-text');
+    const phrases = ["Mình là một Lập trình viên Web.", "Mình là một Sinh viên IT.", "Mình yêu thích thiết kế."];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-function type() {
-    const currentText = textArray[textIndex];
-    if (isDeleting) {
-        textElement.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        textElement.textContent = currentText.substring(0, charIndex + 1);
-        charIndex++;
+    function type() {
+        const currentPhrase = phrases[phraseIndex];
+        
+        if (isDeleting) {
+            typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let typeSpeed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            typeSpeed = 2000; // Dừng 2s khi gõ xong câu
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typeSpeed = 500; // Đợi 0.5s trước khi gõ câu mới
+        }
+
+        setTimeout(type, typeSpeed);
     }
+    setTimeout(type, 1000); // Bắt đầu gõ sau 1s
 
-    if (!isDeleting && charIndex === currentText.length) {
-        isDeleting = true;
-        setTimeout(type, 2000); // Dừng 2 giây khi gõ xong
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % textArray.length;
-        setTimeout(type, 500); // Đợi 0.5s trước khi gõ câu tiếp theo
-    } else {
-        setTimeout(type, isDeleting ? 50 : 100); // Tốc độ gõ
-    }
-}
-// Bắt đầu hiệu ứng sau khi trang tải xong
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(type, 1000); 
+    // 3. Hiệu ứng Reveal (Hiện dần khi cuộn trang)
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Chỉ chạy hiệu ứng 1 lần
+            }
+        });
+    }, {
+        threshold: 0.1, // Kích hoạt khi 10% phần tử lọt vào màn hình
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // 4. Đổi màu menu tương ứng với section đang xem (Scroll Spy)
+    const sections = document.querySelectorAll('section');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= (sectionTop - sectionHeight / 3)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
 });
