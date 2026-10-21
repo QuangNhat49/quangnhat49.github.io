@@ -3,15 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang cá nhân của Quang Nhat</title>
+    <title>Portfolio | Nguyễn Quang Nhật</title>
+    <!-- Nhúng Font chữ hiện đại từ Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Nhúng bộ icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <img src="assets/avatar.jpg" alt="Avatar" class="avatar">
-        <h1>Xin chào, mình là Quang Nhat!</h1>
-        <p>Chào mừng đến với trang web của mình.</p>
-    </div>
+    <!-- Thanh Điều Hướng -->
+    <nav class="navbar">
+        <div class="logo">QN<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#projects">Dự án</a></li>
+        </ul>
+        <div class="menu-btn"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <!-- Phần Hero (Giới thiệu chính) -->
+    <section id="home" class="hero">
+        <div class="hero-content hidden">
+            <h1>Xin chào, mình là <br><span class="highlight">Quang Nhật</span></h1>
+            <h2 class="typing-text">Mình là một Lập trình viên Web.</h2>
+            <p>Chào mừng bạn đến với không gian số của mình. Mình thích tạo ra những sản phẩm web đẹp mắt và tối ưu trải nghiệm người dùng.</p>
+            <div class="social-links">
+                <a href="https://github.com/QuangNhat49" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="hero-image hidden">
+            <!-- Ảnh này lấy từ thư mục assets của bạn -->
+            <img src="assets/avatar.jpg" alt="Ảnh đại diện Quang Nhật" class="avatar-glow">
+        </div>
+    </section>
+
+    <!-- Phần Kỹ Năng (About) -->
+    <section id="about" class="section hidden">
+        <h2 class="section-title">Kỹ Năng Của Mình</h2>
+        <div class="skills-container">
+            <div class="skill-card"><i class="fab fa-html5" style="color: #e34f26;"></i><h3>HTML5</h3></div>
+            <div class="skill-card"><i class="fab fa-css3-alt" style="color: #1572b6;"></i><h3>CSS3</h3></div>
+            <div class="skill-card"><i class="fab fa-js" style="color: #f7df1e;"></i><h3>JavaScript</h3></div>
+            <div class="skill-card"><i class="fab fa-react" style="color: #61dafb;"></i><h3>ReactJS</h3></div>
+        </div>
+    </section>
+
+    <!-- Phần Dự Án -->
+    <section id="projects" class="section hidden">
+        <h2 class="section-title">Dự Án Nổi Bật</h2>
+        <div class="projects-grid">
+            <!-- Dự án 1 -->
+            <div class="project-card">
+                <div class="project-img" style="background-color: #2a2a2a;"></div> <!-- Bạn có thể thay bằng thẻ <img> nếu có ảnh -->
+                <div class="project-info">
+                    <h3>Website Cá Nhân</h3>
+                    <p>Trang portfolio được xây dựng bằng HTML, CSS và JS thuần, host trên GitHub Pages.</p>
+                    <a href="#" class="btn">Xem chi tiết</a>
+                </div>
+            </div>
+            <!-- Dự án 2 -->
+            <div class="project-card">
+                <div class="project-img" style="background-color: #333;"></div>
+                <div class="project-info">
+                    <h3>Quản Lý Công Việc</h3>
+                    <p>Ứng dụng Todo List giúp quản lý thời gian hiệu quả với giao diện tối giản.</p>
+                    <a href="#" class="btn">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Nguyễn Quang Nhật. Built with ❤️</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
