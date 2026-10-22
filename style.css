@@ -245,9 +245,10 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(4rem, 15vw, 13rem);
-  line-height: .9;
+  line-height: 1.1; /* Tăng từ 0.9 lên 1.1 để không bị dính chữ */
   letter-spacing: -0.04em;
   margin-bottom: 2rem;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Thêm bóng đen để chữ trắng nổi bật trên nền video tối */
 }
 .hero-title .line { display: block; overflow: hidden; }
 .hero-title .line:nth-child(2) {
