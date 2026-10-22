@@ -1,131 +1,372 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Nguyễn Quang Nhật - Editor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nguyen Quang Nhat — Video Editor & Motion Graphic Designer</title>
+  <meta name="description" content="Professional Video Editor specializing in Talking Head videos, Motion Graphics, and Clean Edits. Available for freelance projects worldwide." />
+
+  <meta property="og:title" content="Nguyen Quang Nhat — Video Editor" />
+  <meta property="og:description" content="Talking Head • Motion Graphics • Clean Edits" />
+  <meta property="og:image" content="https://picsum.photos/1200/630?random=99" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
 
-    <!-- Navbar -->
-    <header class="navbar">
-        <a href="#home" class="logo">QN<span>.</span></a>
-        <nav class="nav-menu">
-            <a href="#home" class="nav-link active">Trang chủ</a>
-            <a href="#about" class="nav-link">Giới thiệu</a>
-            <a href="#projects" class="nav-link">Dự án</a>
-            <a href="#contact" class="nav-link">Liên hệ</a>
-        </nav>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </header>
+  <!-- Custom cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
 
-    <!-- Hero -->
-    <section id="home" class="hero section">
-        <div class="hero-content reveal">
-            <p class="greeting">Xin chào, mình là</p>
-            <h1 class="name">Nguyễn Quang Nhật<span>.</span></h1>
-            <!-- Đã đổi thành Editor -->
-            <h2 class="typing-text">Mình là một Video Editor.</h2> 
-            <p class="description">Mình có niềm đam mê với việc kể chuyện qua hình ảnh và âm thanh. Mình chuyên cắt ghép, tạo hiệu ứng và xây dựng những thước phim mang lại cảm xúc mạnh mẽ cho người xem.</p>
-            <div class="cta-group">
-                <a href="#projects" class="btn primary-btn">Xem Tác Phẩm</a>
-                <a href="#contact" class="btn secondary-btn">Liên Hệ</a>
-            </div>
-        </div>
-        <div class="hero-image reveal">
-            <div class="img-box">
-                <!-- Đảm bảo file này tồn tại trong thư mục assets -->
-                <img src="assets/avatar.png" alt="Avatar">
-            </div>
-        </div>
-    </section>
+  <!-- Grain -->
+  <div class="grain"></div>
 
-    <!-- About & Skills -->
-    <section id="about" class="section">
-        <h2 class="section-title reveal">Về Bản Thân</h2>
-        <div class="about-grid reveal">
-            <div class="glass-card about-text">
-                <h3>Một chút về mình</h3>
-                <p>Mình là một Multimedia Editor tự do. Mình yêu thích việc biến những đoạn footage thô ráp thành những câu chuyện hoàn chỉnh. Từ việc lên ý tưởng, cắt ghép nhịp điệu, đến việc thêm màu sắc và âm thanh, mình luôn cố gắng để mỗi sản phẩm đều đạt chất lượng tốt nhất.</p>
-            </div>
-            <div class="glass-card skills-text">
-                <h3>Kỹ năng chuyên môn</h3>
-                <!-- Thay đổi các thanh kỹ năng cho phù hợp với Editor -->
-                <div class="skill-bar">
-                    <div class="skill-info"><span>Adobe Premiere Pro</span><span>95%</span></div>
-                    <div class="progress"><div class="progress-fill" style="width: 95%;"></div></div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info"><span>Adobe After Effects</span><span>85%</span></div>
-                    <div class="progress"><div class="progress-fill" style="width: 85%;"></div></div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info"><span>Photoshop / Illustrator</span><span>80%</span></div>
-                    <div class="progress"><div class="progress-fill" style="width: 80%;"></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-inner">
+      <span class="preloader-num">0</span>
+      <div class="preloader-line"><div class="preloader-bar"></div></div>
+      <span class="preloader-label">Loading cinematic experience</span>
+    </div>
+  </div>
 
-    <!-- Projects -->
-    <section id="projects" class="section">
-        <h2 class="section-title reveal">Tác Phẩm Nổi Bật</h2>
-        <div class="projects-grid">
-            <!-- Dự án 1 -->
-            <div class="glass-card project-card reveal">
-                <div class="project-img">
-                    <!-- Đổi icon sang video -->
-                    <i class="fas fa-video"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Video Quảng Cáo Sản Phẩm</h3>
-                    <p>Dự án video ngắn 30s giới thiệu sản phẩm công nghệ, tập trung vào nhịp điệu nhanh và hiệu ứng hình ảnh bắt mắt.</p>
-                    <div class="tags">
-                        <span>Premiere</span><span>After Effects</span>
-                    </div>
-                    <a href="#" class="btn secondary-btn small-btn">Xem Video</a>
-                </div>
-            </div>
-            <!-- Dự án 2 -->
-            <div class="glass-card project-card reveal">
-                <div class="project-img">
-                    <i class="fas fa-film"></i>
-                </div>
-                <div class="project-info">
-                    <h3>Vlog Du Lịch Đà Lạt</h3>
-                    <p>Video dài 5 phút ghi lại chuyến đi, chú trọng vào việc kể chuyện bằng hình ảnh, phối màu cinematic và thiết kế âm thanh.</p>
-                    <div class="tags">
-                        <span>Color Grading</span><span>Sound Design</span>
-                    </div>
-                    <a href="#" class="btn secondary-btn small-btn">Xem Video</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Navbar -->
+  <header class="nav">
+    <a href="#home" class="nav-logo">QN<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#showreel" data-cursor="hover">Showreel</a>
+      <a href="#about" data-cursor="hover">About</a>
+      <a href="#work" data-cursor="hover">Work</a>
+      <a href="#process" data-cursor="hover">Process</a>
+      <a href="#contact" data-cursor="hover">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </header>
 
-    <!-- Footer -->
-    <footer id="contact" class="section">
-        <div class="glass-card contact-card reveal">
-            <h2>Hợp Tác Cùng Mình</h2>
-            <p>Bạn đang cần một Editor cho dự án của mình? Hãy liên hệ nhé!</p>
-            <div class="social-links">
-                <a href="https://github.com/QuangNhat49" target="_blank" aria-label="Github"><i class="fab fa-github"></i></a>
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="mailto:email@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-            <p class="copyright">&copy; 2024 Nguyễn Quang Nhật. Thiết kế với ❤️</p>
-        </div>
-    </footer>
+  <!-- Mobile menu -->
+  <div class="mobile-menu">
+    <a href="#showreel">Showreel</a>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <video autoplay muted loop playsinline poster="https://picsum.photos/1920/1080?random=1">
+        <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-vignette"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-kicker" data-reveal>Portfolio 2026</p>
+      <h1 class="hero-title">
+        <span class="line"><span data-reveal>Nguyen</span></span>
+        <span class="line"><span data-reveal>Quang Nhat.</span></span>
+      </h1>
+      <p class="hero-sub" data-reveal>
+        Video Editor &amp; Motion Graphic Designer — crafting clean, fast-paced
+        edits and visual storytelling that keeps viewers watching.
+      </p>
+      <div class="hero-cta" data-reveal>
+        <a href="#showreel" class="btn btn-primary magnetic" data-cursor="hover">
+          <span>Watch Showreel</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost magnetic" data-cursor="hover">
+          <span>Get in Touch</span>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-marquee">
+      <div class="marquee-track">
+        <span>Talking Head</span><span>·</span><span>Motion Graphics</span><span>·</span>
+        <span>Clean Edits</span><span>·</span><span>Color Grading</span><span>·</span>
+        <span>Sound Design</span><span>·</span><span>Dynamic Captions</span><span>·</span>
+        <span>Talking Head</span><span>·</span><span>Motion Graphics</span><span>·</span>
+        <span>Clean Edits</span><span>·</span><span>Color Grading</span><span>·</span>
+        <span>Sound Design</span><span>·</span><span>Dynamic Captions</span><span>·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOWREEL ============ -->
+  <section class="showreel" id="showreel">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker" data-reveal>01 — Showreel</p>
+        <h2 class="section-title" data-reveal>Featured Reel</h2>
+      </div>
+
+      <div class="reel-wrap" data-reveal>
+        <div class="reel-poster">
+          <img src="https://picsum.photos/1600/900?random=2" alt="Showreel poster" />
+          <button class="reel-play" data-cursor="play" aria-label="Play showreel">
+            <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="39" stroke="currentColor" stroke-width="1" fill="none"/><path d="M32 26l22 14-22 14z" fill="currentColor"/></svg>
+          </button>
+        </div>
+        <div class="reel-video">
+          <!-- 👉 Replace with your own showreel YouTube/Vimeo ID -->
+          <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ?rel=0"
+                  title="Showreel" frameborder="0"
+                  allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT + SKILLS ============ -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-img" data-reveal>
+        <img src="https://picsum.photos/800/1000?random=11" alt="Portrait of Nguyen Quang Nhat" />
+      </div>
+      <div class="about-text">
+        <p class="section-kicker" data-reveal>02 — About Me</p>
+        <h2 class="section-title" data-reveal>Story first,<br/>frames second.</h2>
+        <p data-reveal>
+          I'm <strong>Nguyen Quang Nhat</strong> — a video editor and motion graphic
+          designer with a passion for clean, fast-paced edits that respect the story.
+          I specialize in turning long-form talking head footage into engaging content
+          that holds attention from the first frame to the last.
+        </p>
+        <p data-reveal>
+          Whether it's a finance explainer, a SaaS product promo, or a short-form
+          Reel, I focus on rhythm, clarity, and visuals that feel effortless.
+        </p>
+
+        <div class="about-stats">
+          <div data-reveal><strong>150+</strong><span>Videos Delivered</span></div>
+          <div data-reveal><strong>40+</strong><span>Happy Clients</span></div>
+          <div data-reveal><strong>4+</strong><span>Years Experience</span></div>
+        </div>
+
+        <!-- Core software -->
+        <h3 class="skills-heading" data-reveal>Core Software</h3>
+        <ul class="skills-grid" data-reveal>
+          <li class="skill-badge">DaVinci Resolve Studio</li>
+          <li class="skill-badge">Fusion 3D</li>
+          <li class="skill-badge">Adobe Premiere Pro</li>
+          <li class="skill-badge">After Effects</li>
+        </ul>
+
+        <!-- Specialties -->
+        <h3 class="skills-heading" data-reveal>Key Specialties</h3>
+        <ul class="skills-grid" data-reveal>
+          <li class="skill-badge">Talking Head Videos</li>
+          <li class="skill-badge">Dynamic Subtitles</li>
+          <li class="skill-badge">Color Grading</li>
+          <li class="skill-badge">3D Motion Graphics</li>
+          <li class="skill-badge">Sound Design</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-ghost magnetic" data-reveal data-cursor="hover" style="margin-top:1.5rem;">
+          <span>Let's work together</span>
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED PROJECTS ============ -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker" data-reveal>03 — Selected Works</p>
+        <h2 class="section-title" data-reveal>Featured Projects</h2>
+      </div>
+
+      <div class="work-grid" id="workGrid">
+
+        <!-- Card 1 -->
+        <article class="work-card" data-reveal data-cursor="hover">
+          <div class="work-thumb">
+            <img src="https://picsum.photos/800/1000?random=21" alt="Talking Head - Finance & Tech" loading="lazy" />
+            <div class="work-overlay">
+              <p class="work-cat">Talking Head · Finance &amp; Tech</p>
+              <h3 class="work-title">Finance &amp; Tech Explainer Series</h3>
+              <p class="work-year">2025</p>
+            </div>
+          </div>
+          <div class="work-body">
+            <p class="work-desc">Long-form talking head content transformed into crisp, easy-to-follow explainers with dynamic captions and b-roll overlays.</p>
+            <ul class="work-tags">
+              <li>DaVinci Resolve</li>
+              <li>Dynamic Captions</li>
+            </ul>
+            <button class="btn btn-ghost work-btn" data-video="https://www.youtube.com/embed/aqz-KE-bpKQ" data-title="Finance & Tech Explainer Series">
+              <span>Watch Video</span>
+              <svg width="14" height="14" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="work-card" data-reveal data-cursor="hover">
+          <div class="work-thumb">
+            <img src="https://picsum.photos/800/1000?random=22" alt="SaaS Product Promo" loading="lazy" />
+            <div class="work-overlay">
+              <p class="work-cat">Commercial · SaaS</p>
+              <h3 class="work-title">SaaS Product Promo</h3>
+              <p class="work-year">2025</p>
+            </div>
+          </div>
+          <div class="work-body">
+            <p class="work-desc">Full 3D motion graphics promo built in Fusion — product visualizations, transitions, and kinetic typography.</p>
+            <ul class="work-tags">
+              <li>Fusion 3D</li>
+              <li>Motion Graphics</li>
+            </ul>
+            <button class="btn btn-ghost work-btn" data-video="https://www.youtube.com/embed/aqz-KE-bpKQ" data-title="SaaS Product Promo">
+              <span>Watch Video</span>
+              <svg width="14" height="14" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="work-card" data-reveal data-cursor="hover">
+          <div class="work-thumb">
+            <img src="https://picsum.photos/1600/900?random=23" alt="Real Estate Travel Tour" loading="lazy" />
+            <div class="work-overlay">
+              <p class="work-cat">Travel · Real Estate</p>
+              <h3 class="work-title">Real Estate / Travel Tour</h3>
+              <p class="work-year">2024</p>
+            </div>
+          </div>
+          <div class="work-body">
+            <p class="work-desc">Cinematic tour film with rich color grading and custom sound design to evoke the atmosphere of each location.</p>
+            <ul class="work-tags">
+              <li>Color Grading</li>
+              <li>Sound Design</li>
+            </ul>
+            <button class="btn btn-ghost work-btn" data-video="https://www.youtube.com/embed/aqz-KE-bpKQ" data-title="Real Estate / Travel Tour">
+              <span>Watch Video</span>
+              <svg width="14" height="14" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="work-card" data-reveal data-cursor="hover">
+          <div class="work-thumb">
+            <img src="https://picsum.photos/800/1000?random=24" alt="Short-form Reels TikTok" loading="lazy" />
+            <div class="work-overlay">
+              <p class="work-cat">Short-form · Reels / TikTok</p>
+              <h3 class="work-title">Short-form Reels / TikTok</h3>
+              <p class="work-year">2024</p>
+            </div>
+          </div>
+          <div class="work-body">
+            <p class="work-desc">Fast-paced, engagement-focused vertical edits with punchy cuts, captions, and audio-driven pacing.</p>
+            <ul class="work-tags">
+              <li>Fast-paced</li>
+              <li>Engagement</li>
+            </ul>
+            <button class="btn btn-ghost work-btn" data-video="https://www.youtube.com/embed/aqz-KE-bpKQ" data-title="Short-form Reels / TikTok">
+              <span>Watch Video</span>
+              <svg width="14" height="14" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORKFLOW / PROCESS ============ -->
+  <section class="services workflow" id="process">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker" data-reveal>04 — Process</p>
+        <h2 class="section-title" data-reveal>How we work</h2>
+      </div>
+      <div class="services-grid">
+        <article class="service-card" data-reveal data-cursor="hover">
+          <span class="service-num">01</span>
+          <h3>Brief &amp; Strategy</h3>
+          <p>We align on goals, audience, references, and the story we want to tell — before touching a single clip.</p>
+        </article>
+        <article class="service-card" data-reveal data-cursor="hover">
+          <span class="service-num">02</span>
+          <h3>Rough Cut &amp; Pacing</h3>
+          <p>Structure, rhythm, and flow. I build the first edit so the narrative lands and the pacing feels natural.</p>
+        </article>
+        <article class="service-card" data-reveal data-cursor="hover">
+          <span class="service-num">03</span>
+          <h3>Motion &amp; Color Grading</h3>
+          <p>Graphics, captions, transitions, and color — adding polish that makes the video feel premium.</p>
+        </article>
+        <article class="service-card" data-reveal data-cursor="hover">
+          <span class="service-num">04</span>
+          <h3>Final Delivery &amp; Revisions</h3>
+          <p>Export in every format you need, with 2 free revision rounds to make sure you're 100% happy.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="section-kicker" data-reveal>05 — Contact</p>
+      <h2 class="contact-title" data-reveal>
+        Let's bring your<br/><em>video ideas to life.</em>
+      </h2>
+
+      <a href="mailto:hello@quangnhat.com" class="contact-mail magnetic" data-cursor="hover" data-reveal>
+        hello@quangnhat.com
+      </a>
+
+      <div class="socials" data-reveal>
+        <a href="mailto:hello@quangnhat.com" data-cursor="hover">Email ↗</a>
+        <a href="https://zalo.me/your-zalo-number" target="_blank" rel="noopener" data-cursor="hover">Zalo ↗</a>
+        <a href="https://wa.me/84xxxxxxxxx" target="_blank" rel="noopener" data-cursor="hover">WhatsApp ↗</a>
+        <a href="https://github.com/quangnhat49" target="_blank" rel="noopener" data-cursor="hover">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 Nguyen Quang Nhat. All rights reserved.</span>
+      <a href="#home" data-cursor="hover">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Project modal -->
+  <div class="modal" id="modal">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <div class="modal-body">
+      <div class="modal-video">
+        <iframe id="modalIframe" src="" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
