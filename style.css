@@ -223,8 +223,10 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at center, transparent 20%, rgba(10, 10, 10, 0.85) 100%),
-    linear-gradient(180deg, rgba(10, 10, 10, 0.6) 0%, transparent 40%, var(--bg) 100%);
+    /* Tăng độ tối ở 2 bên mép từ 0.85 lên 0.95 */
+    radial-gradient(circle at center, transparent 15%, rgba(10, 10, 10, 0.95) 100%),
+    /* Thêm lớp tối phía trên để làm nổi bật vùng chữ */
+    linear-gradient(180deg, rgba(10, 10, 10, 0.8) 0%, rgba(10, 10, 10, 0.2) 40%, var(--bg) 100%);
 }
 .hero-content {
   position: relative;
