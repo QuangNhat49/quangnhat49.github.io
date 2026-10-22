@@ -11,25 +11,30 @@ const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 const yearEl = $("#year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-/* ---------- Preloader ---------- */
-window.addEventListener("load", () => {
-  const pre = $(".preloader");
-  const num = $(".preloader-num");
-  const bar = $(".preloader-bar");
-  if (!pre || !num || !bar) return;
+/* ---------- Preloader (Tối ưu tốc độ) ---------- */
+document.addEventListener("DOMContentLoaded", () => {
+  const pre = document.querySelector(".preloader");
+  const num = document.querySelector(".preloader-num");
+  const bar = document.querySelector(".preloader-bar");
+  if (!pre) return;
 
   let progress = 0;
+  // Tốc độ chạy nhanh hơn (nhảy 25-30% mỗi lần thay vì 15%)
   const interval = setInterval(() => {
-    progress += Math.random() * 15;
+    progress += Math.random() * 25 + 10; 
     if (progress >= 100) progress = 100;
-    num.textContent = Math.floor(progress);
-    bar.style.width = progress + "%";
+    
+    if (num) num.textContent = Math.floor(progress);
+    if (bar) bar.style.width = progress + "%";
+    
     if (progress >= 100) {
       clearInterval(interval);
-      setTimeout(() => pre.classList.add("done"), 400);
+      // Chờ 0.2s cho mượt rồi ẩn đi
+      setTimeout(() => pre.classList.add("done"), 200);
     }
-  }, 100);
+  }, 50); // 50ms thay vì 100ms
 });
+
 
 /* ---------- Mobile menu ---------- */
 const navToggle  = $(".nav-toggle");
