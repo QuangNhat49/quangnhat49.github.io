@@ -213,9 +213,21 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 8rem 0 4rem;
+  justify-content: space-between; /* Đẩy nội dung lên trên, marquee xuống dưới */
+  padding-top: 8rem; /* Chừa chỗ cho thanh menu */
   overflow: hidden;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1.2rem, 4vw, 3rem) 4rem; /* Thêm padding-bottom để nút không sát dải chữ */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1; /* Tự động chiếm khoảng trống ở giữa */
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 .hero-bg video { width: 100%; height: 100%; object-fit: cover; opacity: .35; }
@@ -227,14 +239,6 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
     radial-gradient(circle at center, transparent 15%, rgba(10, 10, 10, 0.95) 100%),
     /* Thêm lớp tối phía trên để làm nổi bật vùng chữ */
     linear-gradient(180deg, rgba(10, 10, 10, 0.8) 0%, rgba(10, 10, 10, 0.2) 40%, var(--bg) 100%);
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 clamp(1.2rem, 4vw, 3rem);
-  width: 100%;
 }
 .hero-kicker {
   font-size: .75rem;
@@ -288,15 +292,14 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
 .btn-ghost:hover { border-color: var(--ink); background: rgba(255, 255, 255, 0.05); }
 
 .hero-marquee {
-  position: absolute;
-  bottom: 2rem;
-  left: 0;
-  right: 0;
+  position: relative; /* Đổi từ absolute sang relative */
+  width: 100%;
   overflow: hidden;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 1rem 0;
+  padding: 1.2rem 0;
   z-index: 2;
+  background: var(--bg); /* Thêm nền đen để chắc chắn không bị trong suốt đè lên video */
 }
 .marquee-track {
   display: flex;
