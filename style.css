@@ -214,3 +214,101 @@ footer { padding: 50px 10%; min-height: auto; }
     .section { padding: 80px 5% 40px; }
     .name { font-size: 2.5rem; }
 }
+
+
+
+
+
+
+
+
+
+/* ============ ADDITIONS: About skills, Work cards, Workflow ============ */
+
+/* Skill tags grid */
+.skills-heading{
+  font-family:var(--serif);
+  font-size:1.15rem;
+  font-weight:400;
+  color:var(--accent);
+  margin:2rem 0 .9rem;
+  letter-spacing:-0.01em;
+}
+.skills-grid{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+  margin-bottom:1rem;
+}
+.skill-badge{
+  padding:.45rem 1rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  font-size:.8rem;
+  letter-spacing:.05em;
+  color:var(--ink);
+  background:rgba(255,255,255,0.02);
+  transition:all .3s var(--ease);
+}
+.skill-badge:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+  transform:translateY(-2px);
+}
+
+/* Work card body (below thumbnail) */
+.work-body{
+  padding:1.5rem 1.6rem 1.8rem;
+  background:var(--bg-2);
+}
+.work-desc{
+  font-size:.92rem;
+  color:var(--ink-dim);
+  margin-bottom:1rem;
+  line-height:1.55;
+}
+.work-tags{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  margin-bottom:1.2rem;
+}
+.work-tags li{
+  font-size:.7rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--accent);
+  padding:.3rem .7rem;
+  border:1px solid rgba(232,179,90,0.3);
+  border-radius:999px;
+}
+.work-btn{
+  font-size:.75rem;
+  padding:.65rem 1.2rem;
+  cursor:pointer;
+}
+
+/* When card has body below, thumb aspect stays */
+.work-card{display:flex;flex-direction:column;}
+.work-card:nth-child(3n){grid-column:span 2;}
+.work-card:nth-child(3n) .work-body{display:flex;flex-direction:column;}
+
+/* Overlay hover behavior stays intact */
+.work-overlay{pointer-events:none;}
+
+/* Workflow uses .services-grid (2 columns) — good on desktop */
+.workflow{padding-top:8rem;}
+
+/* Modal tweak: no desc anymore */
+.modal-info h3{
+  font-family:var(--serif);
+  font-size:1.5rem;
+}
+
+/* Responsive: work body under thumb still clean */
+@media (max-width:768px){
+  .work-body{padding:1.2rem 1.2rem 1.5rem;}
+  .skills-heading{margin-top:1.5rem;}
+}
