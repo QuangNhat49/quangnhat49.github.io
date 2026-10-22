@@ -250,7 +250,12 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   margin-bottom: 2rem;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Thêm bóng đen để chữ trắng nổi bật trên nền video tối */
 }
-.hero-title .line { display: block; overflow: hidden; }
+.hero-title .line { 
+  display: block; 
+  overflow: hidden; 
+  padding-bottom: 0.15em; /* Thêm khoảng trống nhỏ để không cắt đuôi chữ g, y, Q */
+  margin-bottom: -0.1em;  /* Bù trừ lại khoảng cách để bố cục không bị giãn ra */
+}
 .hero-title .line:nth-child(2) {
   padding-left: clamp(2rem, 12vw, 10rem);
   font-style: italic;
